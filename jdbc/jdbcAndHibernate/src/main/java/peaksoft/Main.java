@@ -9,6 +9,7 @@ public class Main {
         // реализуйте алгоритм здесь
 //        Util.connection();
         UserServiceImpl userImpl = new UserServiceImpl();
+
 //        userImpl.createUsersTable();
 //        userImpl.dropUsersTable();
 //        userImpl.saveUser("zhazira", "zhumabekova", (byte) 11);
