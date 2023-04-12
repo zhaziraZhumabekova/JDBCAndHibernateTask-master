@@ -1,5 +1,8 @@
 package peaksoft.util;
 
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -20,4 +23,19 @@ public class Util {
             return connection;
         }
 
+    private static SessionFactory buildSessionFactory(){
+        SessionFactory sessionFactory = null;
+        try{
+            sessionFactory = new Configuration()
+                    .configure("hibernate.cfg.xml")
+//                    .addAnnotatedClass(Student.class)
+                    .buildSessionFactory();
+        } catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return sessionFactory;
+    }
+    public static SessionFactory getSessionFactory(){
+        return buildSessionFactory();
+    }
 }
